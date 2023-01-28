@@ -10,20 +10,20 @@ for(let i = 0; i < imgElems.length; i++) {
 chances = [35, 35, 20, 10];
 pieces = ["knight", "bishop", "rook", "queen"];
 
-function toPawn(elem) {
-	elem.originalTarget.src="pawn.png";
-}
-
 function click_change_item(elem) {
-	let randNum = Math.trunc(Math.random() * 100 + 1);
-	console.log(randNum);
-	let sum = 0;
-	for(let i = 0; i < chances.length; i++) {
-		if(randNum > sum && randNum <= sum + chances[i]) {
-			elem.originalTarget.src=pieces[i]+".png";
-			break;
+	elem.originalTarget.src="pawn.png";
+	setTimeout(function() {
+		let randNum = Math.trunc(Math.random() * 100 + 1);
+		console.log(randNum);
+		let sum = 0;
+		for(let i = 0; i < chances.length; i++) {
+			if(randNum > sum && randNum <= sum + chances[i]) {
+				elem.originalTarget.src=pieces[i]+".png";
+				break;
+			}
+			sum = sum+chances[i];
 		}
-		sum = sum+chances[i];
-	}
+	}, 1000);
+
 	console.log("hello");
 }
