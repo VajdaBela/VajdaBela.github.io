@@ -2,8 +2,6 @@ imgElems = document.querySelectorAll('img');
 
 for(let i = 0; i < imgElems.length; i++) {
 	imgElems[i].addEventListener('click', click_change_item);
-	imgElems[i].addEventListener('mousedown', toPawn);
-	
 }
 
 //knight bishop rook queen
@@ -23,7 +21,7 @@ function click_change_item(elem) {
 			}
 			sum = sum+chances[i];
 		}
-	}, 1000);
+	}, 250);
 
 	console.log("hello");
 }
